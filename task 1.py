@@ -24,8 +24,8 @@ class MainWindow(QWidget):
         self.lst2 = QListWidget()
         self.lst2.setSelectionMode(QAbstractItemView.ExtendedSelection)
         self.lst1.addItems(trp)
-        self.inp1 = QPushButton(">")
-        self.inp2 = QPushButton("<")
+        self.inp1 = QPushButton("Add")
+        self.inp2 = QPushButton("Remove")
         self.setting()
 
     def setting(self):
@@ -39,6 +39,8 @@ class MainWindow(QWidget):
         self.setLayout(hbox)
         self.inp1.clicked.connect(self.toright)
         self.inp2.clicked.connect(self.toleft)
+        self.inp1.setStyleSheet("background: purple")
+        self.inp2.setStyleSheet("background: blue")
 
     def toright(self):
         listItems = self.lst1.selectedItems()
